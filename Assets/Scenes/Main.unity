@@ -1476,36 +1476,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fcd47bf2c3e4b749a52137bbc87f2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownTimer: 0.1
   cyanSounds:
-  - name: 
+  - name: C2
     clip: {fileID: 8300000, guid: 7212884d88b3d3b46a8a16097692b651, type: 3}
     volume: 1
-  - name: 
+    source: {fileID: 0}
+    timer: 0
+  - name: E2
     clip: {fileID: 8300000, guid: 067185337052edb4eba58262105e560d, type: 3}
     volume: 1
-  - name: 
+    source: {fileID: 0}
+    timer: 0
+  - name: G2
     clip: {fileID: 8300000, guid: abbfff55d363fb341b243f175990e0f8, type: 3}
     volume: 1
+    source: {fileID: 0}
+    timer: 0
   orangeSounds:
-  - name: 
+  - name: C3
     clip: {fileID: 8300000, guid: ff4bfc7315e4aa24cb400990a66bba73, type: 3}
     volume: 1
-  - name: 
+    source: {fileID: 0}
+    timer: 0
+  - name: E3
     clip: {fileID: 8300000, guid: aa9630652da823e4c96856370323898d, type: 3}
     volume: 1
-  - name: 
+    source: {fileID: 0}
+    timer: 0
+  - name: G3
     clip: {fileID: 8300000, guid: 788890bff5c9fd34db71444d88915381, type: 3}
     volume: 1
+    source: {fileID: 0}
+    timer: 0
   purpleSounds:
-  - name: 
+  - name: C1
     clip: {fileID: 8300000, guid: 345290060da34c1439d5246d5d78425e, type: 3}
     volume: 1
-  - name: 
+    source: {fileID: 0}
+    timer: 0
+  - name: E1
     clip: {fileID: 8300000, guid: e16e3b8d06d03bf47bd1d54f117775af, type: 3}
     volume: 1
-  - name: 
+    source: {fileID: 0}
+    timer: 0
+  - name: G1
     clip: {fileID: 8300000, guid: 17d02fe4c3afdc441a808a0befb89bf9, type: 3}
     volume: 1
+    source: {fileID: 0}
+    timer: 0
 --- !u!1 &2023062582
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,15 +12,15 @@ public class SoundManager : MonoBehaviour
         public string name;
         public AudioClip clip;
         [Range(0f, 1f)] public float volume = 1f;
+        public AudioSource source;
+        public float timer;
     }
+
+    [SerializeField] private float cooldownTimer = 0.2f;
 
     [SerializeField] private List<Sound> cyanSounds = new List<Sound>();
     [SerializeField] private List<Sound> orangeSounds = new List<Sound>();
     [SerializeField] private List<Sound> purpleSounds = new List<Sound>();
-
-    private List<AudioSource> cyanSources = new List<AudioSource>();
-    private List<AudioSource> orangeSources = new List<AudioSource>();
-    private List<AudioSource> purpleSources = new List<AudioSource>();
 
     private void Awake()
     {
@@ -30,8 +30,8 @@ public class SoundManager : MonoBehaviour
             source.clip = s.clip;
             source.volume = s.volume;
             source.playOnAwake = false;
-
-            cyanSources.Add(source);
+            s.source = source;
+            s.timer = 0f;
         }
 
         foreach (Sound s in orangeSounds)
@@ -40,8 +40,8 @@ public class SoundManager : MonoBehaviour
             source.clip = s.clip;
             source.volume = s.volume;
             source.playOnAwake = false;
-
-            orangeSources.Add(source);
+            s.source = source;
+            s.timer = 0f;
         }
 
         foreach (Sound s in purpleSounds)
@@ -50,18 +50,37 @@ public class SoundManager : MonoBehaviour
             source.clip = s.clip;
             source.volume = s.volume;
             source.playOnAwake = false;
-
-            purpleSources.Add(source);
+            s.source = source;
+            s.timer = 0f;
         }
     }
 
-    public void PlayRandom(AgentType color)
+    private void Update()
     {
+        UpdateTimers();
+    }
+
+    private void UpdateTimers()
+    {
+        foreach (Sound s in cyanSounds)
+            s.timer += Time.deltaTime;
+    }
+
+    public void PlayGroup(AgentType color)
+    {
+        Sound sound;
+
         if (color == AgentType.Cyan)
-            cyanSources[Random.Range(0, cyanSources.Count)].Play();
+            sound = cyanSounds[Random.Range(0, cyanSounds.Count)];
         else if (color == AgentType.Orange)
-            orangeSources[Random.Range(0, orangeSources.Count)].Play();
-        else if (color == AgentType.Purple)
-            purpleSources[Random.Range(0, purpleSources.Count)].Play();
+            sound = orangeSounds[Random.Range(0, orangeSounds.Count)];
+        else
+            sound = purpleSounds[Random.Range(0, purpleSounds.Count)];
+
+        if (sound.timer >= cooldownTimer)
+        {
+            sound.timer = 0f;
+            sound.source.Play();
+        }
     }
 }

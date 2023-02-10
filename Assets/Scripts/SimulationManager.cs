@@ -47,13 +47,13 @@ public class SimulationManager : MonoBehaviour
             switch (newGroupSize % 3)
             {
                 case 1:
-                    soundManager.PlayRandom(SoundManager.AgentType.Cyan);
+                    soundManager.PlayGroup(SoundManager.AgentType.Cyan);
                     break;
                 case 2:
-                    soundManager.PlayRandom(SoundManager.AgentType.Orange);
+                    soundManager.PlayGroup(SoundManager.AgentType.Orange);
                     break;
                 case 0:
-                    soundManager.PlayRandom(SoundManager.AgentType.Purple);
+                    soundManager.PlayGroup(SoundManager.AgentType.Purple);
                     break;
             }
         }
