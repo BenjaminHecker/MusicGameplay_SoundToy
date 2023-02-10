@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Agent;
 
 public class SoundManager : MonoBehaviour
 {
-    public enum AgentType { Cyan, Orange, Purple }
-
     [System.Serializable]
     class Sound
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Agent;
 
 public class SimulationManager : MonoBehaviour
 {
@@ -47,13 +48,13 @@ public class SimulationManager : MonoBehaviour
             switch (newGroupSize % 3)
             {
                 case 1:
-                    soundManager.PlayGroup(SoundManager.AgentType.Cyan);
+                    soundManager.PlayGroup(AgentType.Cyan);
                     break;
                 case 2:
-                    soundManager.PlayGroup(SoundManager.AgentType.Orange);
+                    soundManager.PlayGroup(AgentType.Orange);
                     break;
                 case 0:
-                    soundManager.PlayGroup(SoundManager.AgentType.Purple);
+                    soundManager.PlayGroup(AgentType.Purple);
                     break;
             }
         }

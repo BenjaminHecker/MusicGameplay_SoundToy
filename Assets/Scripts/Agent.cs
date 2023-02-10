@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour
 {
+    public enum AgentType { Cyan, Orange, Purple }
+
     [HideInInspector] public SimulationManager simManager;
 
     [SerializeField] private float speed = 10f;
