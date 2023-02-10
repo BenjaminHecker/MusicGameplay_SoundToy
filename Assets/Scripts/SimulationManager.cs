@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SimulationManager : MonoBehaviour
 {
+    [SerializeField] private SoundManager soundManager;
+
     private List<Transform> spawnedObjects;
     private Dictionary<Transform, Transform> parent = new Dictionary<Transform, Transform>();
 
@@ -33,12 +35,27 @@ public class SimulationManager : MonoBehaviour
 
         if (parent[x] != y)
         {
+            int newGroupSize = GroupSize(a) + GroupSize(b);
+
             SeparateAgents(x);
-            JoinAgents(x, y, GroupSize(a) + GroupSize(b));
+            JoinAgents(x, y, newGroupSize);
 
             foreach (Transform t in spawnedObjects)
                 if (parent[t] == x)
                     parent[t] = y;
+
+            switch (newGroupSize % 3)
+            {
+                case 1:
+                    soundManager.PlayRandom(SoundManager.AgentType.Cyan);
+                    break;
+                case 2:
+                    soundManager.PlayRandom(SoundManager.AgentType.Orange);
+                    break;
+                case 0:
+                    soundManager.PlayRandom(SoundManager.AgentType.Purple);
+                    break;
+            }
         }
     }
 

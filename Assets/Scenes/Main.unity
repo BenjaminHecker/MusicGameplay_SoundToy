@@ -1414,6 +1414,7 @@ GameObject:
   - component: {fileID: 2002816730}
   - component: {fileID: 2002816731}
   - component: {fileID: 2002816729}
+  - component: {fileID: 2002816732}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1433,6 +1434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d1b3b1a9e090541806192c5a4ea2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 2002816732}
   springFrequency: 5
   explosionForce: 1
 --- !u!4 &2002816730
@@ -1443,7 +1445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002816728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1462,6 +1464,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09113e3e74a6a649847e416da7a8dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2002816732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002816728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fcd47bf2c3e4b749a52137bbc87f2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cyanSounds:
+  - name: 
+    clip: {fileID: 8300000, guid: 7212884d88b3d3b46a8a16097692b651, type: 3}
+    volume: 1
+  - name: 
+    clip: {fileID: 8300000, guid: 067185337052edb4eba58262105e560d, type: 3}
+    volume: 1
+  - name: 
+    clip: {fileID: 8300000, guid: abbfff55d363fb341b243f175990e0f8, type: 3}
+    volume: 1
+  orangeSounds:
+  - name: 
+    clip: {fileID: 8300000, guid: ff4bfc7315e4aa24cb400990a66bba73, type: 3}
+    volume: 1
+  - name: 
+    clip: {fileID: 8300000, guid: aa9630652da823e4c96856370323898d, type: 3}
+    volume: 1
+  - name: 
+    clip: {fileID: 8300000, guid: 788890bff5c9fd34db71444d88915381, type: 3}
+    volume: 1
+  purpleSounds:
+  - name: 
+    clip: {fileID: 8300000, guid: 345290060da34c1439d5246d5d78425e, type: 3}
+    volume: 1
+  - name: 
+    clip: {fileID: 8300000, guid: e16e3b8d06d03bf47bd1d54f117775af, type: 3}
+    volume: 1
+  - name: 
+    clip: {fileID: 8300000, guid: 17d02fe4c3afdc441a808a0befb89bf9, type: 3}
+    volume: 1
 --- !u!1 &2023062582
 GameObject:
   m_ObjectHideFlags: 0
